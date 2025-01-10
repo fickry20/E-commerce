@@ -1,0 +1,256 @@
+.hero-section {
+  height: max-content;
+}
+
+.style-section {
+  padding: 30px;
+}
+
+.card-style {
+  height: 200px;
+  background-size: cover;
+  background-color: white;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.card-style h5 {
+  margin: 40px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.link-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link-footer a {
+  color: white;
+}
+
+.card-product {
+  /* width: calc(25% - 0.5rem); */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* padding: 10px; */
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.card-product:hover {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+  width: 80px;
+  height: 80px;
+}
+
+.card-image img {
+  width: 70px;
+  height: 70px;
+}
+
+.card-image:hover {
+  cursor: pointer;
+}
+
+.main-image {
+  height: 500px;
+}
+
+.hero-title {
+  font-size: 36px;
+}
+
+.subscriber-section {
+  padding: 20px;
+}
+
+.subscriber-input {
+  width: 100%;
+}
+
+.ellipsis-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.5em; /* Adjust based on line height */
+  line-height: 1.5em; /* Set line height */
+}
+
+.loader {
+  width: 80px;
+  height: 80px;
+  border: 9px solid #e8f5ff;
+  border-bottom-color: #352f44;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  -webkit-animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fa-star {
+  color: lightgray;
+}
+
+.fa-star.checked {
+  color: orange;
+}
+
+.marquee {
+  width: 300px; /* the plugin works for responsive layouts so width is not necessary */
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+.card-auth {
+  width: 100%;
+}
+
+#order-tabs,
+#brands-filters {
+  white-space: nowrap; /* Prevent items from wrapping */
+  overflow-x: auto; /* Enable horizontal scroll */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+#order-tabs::-webkit-scrollbar,
+#brands-filters::-webkit-scrollbar {
+  display: none; /* Hide scrollbar on WebKit browsers */
+}
+
+.nav-item {
+  flex-shrink: 0; /* Prevent items from shrinking */
+}
+
+.nav-link {
+  padding: 10px 15px; /* Adjust padding for better spacing */
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+  .hero-section {
+    height: 670px;
+  }
+  .hero-title {
+    font-size: 70px;
+  }
+  .subscriber-section {
+    padding: 20px 50px;
+  }
+  .subscriber-input {
+    width: 30%;
+  }
+  .card-auth {
+    width: 450px;
+  }
+  .card-image {
+    width: 100px;
+    height: 100px;
+  }
+  .card-image img {
+    width: 90px;
+    height: 90px;
+  }
+  .main-image {
+    height: 600px;
+  }
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .hero-section {
+    height: 670px;
+  }
+  .hero-title {
+    font-size: 70px;
+  }
+  .style-section {
+    padding: 40px 64px;
+  }
+  .subscriber-section {
+    padding: 20px 50px;
+  }
+  .subscriber-input {
+    width: 30%;
+  }
+  .card-auth {
+    width: 450px;
+  }
+  .card-image {
+    width: 100px;
+    height: 100px;
+  }
+  .card-image img {
+    width: 90px;
+    height: 90px;
+  }
+  .main-image {
+    height: 600px;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* CSS */
+  .subscriber-section {
+    padding: 20px 50px;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  /* CSS */
+}

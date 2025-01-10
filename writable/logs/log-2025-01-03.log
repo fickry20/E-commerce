@@ -1,0 +1,57 @@
+INFO - 2025-01-03 13:20:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-03 13:40:21 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:184
+Stack trace:
+#0 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'ecommerce_shoes', 3306, '', 0)
+#1 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(757): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(161): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 /Users/dystianen/Dev/ecommerce-shoes/spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(757): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(161): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 /Users/dystianen/Dev/ecommerce-shoes/spark(102): CodeIgniter\CLI\Console->run()
+#10 {main}
+ERROR - 2025-01-03 13:40:44 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:184
+Stack trace:
+#0 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(184): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), 'ecommerce_shoes', 3306, '', 0)
+#1 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(757): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(161): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 /Users/dystianen/Dev/ecommerce-shoes/spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1410): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1429): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(757): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(161): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/CLI/Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 /Users/dystianen/Dev/ecommerce-shoes/vendor/codeigniter4/framework/system/CLI/Console.php(46): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 /Users/dystianen/Dev/ecommerce-shoes/spark(102): CodeIgniter\CLI\Console->run()
+#10 {main}
