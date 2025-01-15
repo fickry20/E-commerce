@@ -8,8 +8,8 @@ use App\Models\CategoryModel;
 use App\Models\FileModel;
 use App\Models\ProductModel;
 use App\Models\SizeModel;
-use Config\Services;
 
+use Config\Services;
 class ProductController extends BaseController
 {
     public function index(): string
@@ -74,12 +74,8 @@ class ProductController extends BaseController
 
         $product['images'] = array_column($images, 'file_path');
 
-        $sizeModel = new SizeModel();
-        $sizes = $sizeModel->findAll();
-
         $data = [
             "product" => $product,
-            "sizes" => $sizes
         ];
         return view('customer/product/v_product_detail', $data);
     }
@@ -231,7 +227,7 @@ class ProductController extends BaseController
                 'category_id' => $this->request->getVar('category_id'),
                 'brand_id' => $this->request->getVar('brand_id'),
                 'product_name' => $this->request->getVar('product_name'),
-                'description' =>  $this->request->getVar('description'),
+                'description' => $this->request->getVar('description'),
                 'rating' => $this->request->getVar('rating'),
                 'price' => $this->request->getVar('price'),
                 'deleted_at' => null,
@@ -266,12 +262,63 @@ class ProductController extends BaseController
                     }
                 }
             }
+        }
+    }
+    public function editProduct($productId): string
+    {
+        $productModel = new ProductModel();
+        $product = $productModel->where('product_id', $productId)->first();
 
-            session()->setFlashdata('success', 'Create Product Successfully.');
-            return redirect()->to(base_url("/admin/manage-product"));
+        if (!$product) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException("Produk dengan ID $productId tidak ditemukan.");
+        }
+
+        $categoryModel = new CategoryModel();
+        $categories = $categoryModel->findAll();
+
+        $brandModel = new BrandModel();
+        $brands = $brandModel->findAll();
+
+        $data = [
+            "product" => $product,
+            "categories" => $categories,
+            "brands" => $brands,
+        ];
+
+        return view('admin/product/v_edit', $data);
+    }
+
+    public function updateProduct($productId)
+    {
+        helper(['form']);
+        $productModel = new ProductModel();
+        $rules = [
+            'brand_id' => 'required',
+            'product_name' => 'required|min_length[4]|max_length[100]',
+            'description' => 'required',
+            'rating' => 'required',
+            'price' => 'required',
+        ];
+
+        if ($this->validate($rules)) {
+            $data = [
+                'category_id' => $this->request->getVar('category_id'),
+                'brand_id' => $this->request->getVar('brand_id'),
+                'product_name' => $this->request->getVar('product_name'),
+                'description' => $this->request->getVar('description'),
+                'rating' => $this->request->getVar('rating'),
+                'price' => $this->request->getVar('price'),
+            ];
+
+            $productModel->update($productId, $data);
+
+            session()->setFlashdata('success', 'Product updated successfully.');
+            return redirect()->to(base_url('/admin/manage-product'));
         } else {
             $validation = Services::validation();
-            return redirect()->to(base_url('/admin/product/create'))->withInput()->with('validation', $validation);
+            return redirect()->to(base_url("/admin/product/edit/$productId"))
+                ->withInput()
+                ->with('validation', $validation);
         }
     }
 }

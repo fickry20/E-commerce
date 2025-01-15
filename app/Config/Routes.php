@@ -26,4 +26,7 @@ $routes->group('/admin', function ($routes) {
   $routes->get('manage-product', 'ProductController::manageProduct');
   $routes->get('product/create', 'ProductController::createProduct');
   $routes->post('product/create/submit', 'ProductController::submitCreateProduct');
+  $routes->post('product/edit/update', 'ProductController::submitCreateProduct');
+  $routes->get('product/edit/(:num)', 'ProductController::editProduct/$1');
 });
+
